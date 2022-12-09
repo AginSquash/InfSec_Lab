@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InfSec_Lab
 {
-    class Class1
+    class UsersJSON
     {
     }
 }
