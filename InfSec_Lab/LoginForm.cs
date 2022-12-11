@@ -57,7 +57,6 @@ namespace InfSec_Lab
             {
                 Console.WriteLine("Successful");
 
-                //this.Close();
                 MainForm ms = new MainForm(); //this is the change, code for redirect  
                 ms.Users = this.Users;
                 this.Hide();
