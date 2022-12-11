@@ -13,6 +13,7 @@ namespace InfSec_Lab
     public partial class MainForm : Form
     {
         public List<UserJSON> Users = new List<UserJSON>();
+        public UserJSON currentUser = new UserJSON();
         public MainForm()
         {
             InitializeComponent();
@@ -25,7 +26,10 @@ namespace InfSec_Lab
 
         private void changePassToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            ChangePassForm cpf = new ChangePassForm(); //this is the change, code for redirect  
+            cpf.user = currentUser;
+            cpf.allusersjson = Users;
+            cpf.ShowDialog();
         }
     }
 }

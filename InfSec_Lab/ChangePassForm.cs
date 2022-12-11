@@ -12,8 +12,8 @@ namespace InfSec_Lab
 {
     public partial class ChangePassForm : Form
     {
-        UserJSON user = new UserJSON();
-        AllUsersJson allusersjson = new AllUsersJson();
+        public UserJSON user = new UserJSON();
+        public List<UserJSON> Users = new List<UserJSON>();
         public ChangePassForm()
         {
             InitializeComponent();
@@ -25,9 +25,11 @@ namespace InfSec_Lab
             {
                 if (newPass.Text == newPass2.Text)
                 {
-                    allusersjson.UsersData.Remove(user);
+                    Users.Remove(user);
                     user.Password = newPass.Text;
-                    allusersjson.UsersData.Add(user);
+                    Users.Add(user);
+
+
                 }
             }
         }
