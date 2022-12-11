@@ -24,26 +24,18 @@ namespace InfSec_Lab
             string curFile = "users.json";
             if (!File.Exists(curFile))
             {
+               
                 Console.WriteLine("Cannot found users.json. Creating...");
                 UserJSON admin = new UserJSON("ADMIN");
-                AllUsersJson users = new AllUsersJson(admin);
-                string json = JsonConvert.SerializeObject(users);
-                using (StreamWriter writer = new StreamWriter(curFile, false))
-                {
-                    writer.WriteLineAsync(json);
-                }
+                List<UserJSON> allUserJSON = new List<UserJSON>();
+                allUserJSON.Add(admin);
+                IODriver.WriteUsersData(Users);
 
                 Users.Add(admin);
             } else
             {
                 Console.WriteLine("users.json founded");
-                using (StreamReader reader = new StreamReader(curFile))
-                {
-                    string json = reader.ReadToEnd();
-                    Console.WriteLine(json);
-                    AllUsersJson restoredAllUsers = JsonConvert.DeserializeObject<AllUsersJson>(json);
-                    Users = restoredAllUsers.UsersData;
-                }
+                Users = IODriver.ReadUsersData();
             }
         }
 
@@ -59,6 +51,7 @@ namespace InfSec_Lab
 
                 MainForm ms = new MainForm(); //this is the change, code for redirect  
                 ms.Users = this.Users;
+                ms.currentUser = new UserJSON(login, pass);
                 this.Hide();
                 ms.ShowDialog();
                 this.Close();

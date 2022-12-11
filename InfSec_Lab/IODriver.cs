@@ -13,7 +13,6 @@ namespace InfSec_Lab
         static string curFile = "users.json";
         static public void WriteUsersData(List<UserJSON> users)
         {
-            AllUsersJson allUsersJson = new AllUsersJson(users);
             string json = JsonConvert.SerializeObject(users);
             using (StreamWriter writer = new StreamWriter(curFile, false))
             {
@@ -27,8 +26,7 @@ namespace InfSec_Lab
             {
                 string json = reader.ReadToEnd();
                 Console.WriteLine(json);
-                AllUsersJson restoredAllUsers = JsonConvert.DeserializeObject<AllUsersJson>(json);
-                List<UserJSON> Users = restoredAllUsers.UsersData;
+                List<UserJSON> Users = JsonConvert.DeserializeObject<List<UserJSON>>(json);
                 return Users;
             }
         }
