@@ -22,5 +22,10 @@ namespace InfSec_Lab
         {
             Application.Exit();
         }
+
+        private void changePassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

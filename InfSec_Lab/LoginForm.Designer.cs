@@ -39,7 +39,7 @@ namespace InfSec_Lab
             // loginTextBox
             // 
             this.loginTextBox.Location = new System.Drawing.Point(148, 75);
-            this.loginTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.loginTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(196, 31);
             this.loginTextBox.TabIndex = 0;
@@ -47,7 +47,7 @@ namespace InfSec_Lab
             // passwordTextBox
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(148, 158);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(196, 31);
@@ -76,7 +76,7 @@ namespace InfSec_Lab
             // AuthButton
             // 
             this.AuthButton.Location = new System.Drawing.Point(148, 240);
-            this.AuthButton.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.AuthButton.Margin = new System.Windows.Forms.Padding(6);
             this.AuthButton.Name = "AuthButton";
             this.AuthButton.Size = new System.Drawing.Size(200, 44);
             this.AuthButton.TabIndex = 4;
@@ -84,19 +84,20 @@ namespace InfSec_Lab
             this.AuthButton.UseVisualStyleBackColor = true;
             this.AuthButton.Click += new System.EventHandler(this.AuthButton_Click);
             // 
-            // Form1
+            // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(192F, 192F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(464, 362);
             this.Controls.Add(this.AuthButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.loginTextBox);
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
-            this.Name = "Form1";
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Name = "LoginForm";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LoginForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
