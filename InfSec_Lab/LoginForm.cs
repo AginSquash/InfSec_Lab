@@ -12,12 +12,12 @@ using Newtonsoft.Json;
 
 namespace InfSec_Lab
 {
-    public partial class Form1 : Form
+    public partial class LoginForm : Form
     {
 
         List<UserJSON> Users = new List<UserJSON>();
 
-        public Form1()
+        public LoginForm()
         {
             InitializeComponent();
 
@@ -56,6 +56,14 @@ namespace InfSec_Lab
             if (Users.Exists( item => (item.Login == login) && (item.Password == pass)))
             {
                 Console.WriteLine("Successful");
+
+                //this.Close();
+                MainForm ms = new MainForm(); //this is the change, code for redirect  
+                ms.Users = this.Users;
+                this.Hide();
+                ms.ShowDialog();
+                this.Close();
+
             } else
             {
                 Console.WriteLine("Error");
