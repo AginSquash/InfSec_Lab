@@ -80,6 +80,7 @@ namespace InfSec_Lab
             // 
             this.oldPass.Location = new System.Drawing.Point(294, 38);
             this.oldPass.Name = "oldPass";
+            this.oldPass.PasswordChar = '*';
             this.oldPass.Size = new System.Drawing.Size(292, 31);
             this.oldPass.TabIndex = 4;
             // 
@@ -87,6 +88,7 @@ namespace InfSec_Lab
             // 
             this.newPass.Location = new System.Drawing.Point(294, 100);
             this.newPass.Name = "newPass";
+            this.newPass.PasswordChar = '*';
             this.newPass.Size = new System.Drawing.Size(292, 31);
             this.newPass.TabIndex = 5;
             // 
@@ -94,6 +96,7 @@ namespace InfSec_Lab
             // 
             this.newPass2.Location = new System.Drawing.Point(294, 157);
             this.newPass2.Name = "newPass2";
+            this.newPass2.PasswordChar = '*';
             this.newPass2.Size = new System.Drawing.Size(292, 31);
             this.newPass2.TabIndex = 6;
             // 

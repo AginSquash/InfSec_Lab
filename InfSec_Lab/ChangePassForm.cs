@@ -25,11 +25,14 @@ namespace InfSec_Lab
             {
                 if (newPass.Text == newPass2.Text)
                 {
-                    Users.Remove(user);
+                    Users.RemoveAll(item => (item.Login == user.Login));
                     user.Password = newPass.Text;
                     Users.Add(user);
 
+                    IODriver.WriteUsersData(Users);
 
+                    MessageBox.Show("Пароль успешно изменен", "Успешно");
+                    this.Close();
                 }
             }
         }

@@ -28,7 +28,7 @@ namespace InfSec_Lab
         {
             ChangePassForm cpf = new ChangePassForm(); //this is the change, code for redirect  
             cpf.user = currentUser;
-            cpf.allusersjson = Users;
+            cpf.Users = Users;
             cpf.ShowDialog();
         }
     }
