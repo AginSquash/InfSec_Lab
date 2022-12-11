@@ -21,11 +21,6 @@ namespace InfSec_Lab
         private void MainForm_Closing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-            // e.Cancel = true;
-            /*
-            this.Hide();
-            frmHome frm = new frmHome();
-            frm.Show(); */
         }
     }
 }
