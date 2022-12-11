@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace InfSec_Lab
 {
-    [Serializable]
+
     public class UserJSON
     {
         public string Login { get; set; }
         public string Password { get; set; }
 
+        [JsonConstructor]
         public UserJSON(string login, string password)
         {
             Login = login;
@@ -26,20 +28,21 @@ namespace InfSec_Lab
         }
     }
 
-    [Serializable]
+
     public class AllUsersJson
     {
-        public List<UserJSON> UserData { get; set; }
+        public List<UserJSON> UsersData { get; set; }
 
         public AllUsersJson(UserJSON userJSON)
         {
-            UserData = new List<UserJSON>();
-            UserData.Add(userJSON);
+            UsersData = new List<UserJSON>();
+            UsersData.Add(userJSON);
         }
 
+        [JsonConstructor]
         public AllUsersJson(List<UserJSON> usersJSON)
         {
-            UserData = usersJSON;
+            UsersData = usersJSON;
         }
     }
 }

@@ -8,9 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
-using System.Text.Json;
-using System.Runtime.Serialization;
-using System.Runtime.Serialization.Json;
+using Newtonsoft.Json;
 
 namespace InfSec_Lab
 {
@@ -24,48 +22,45 @@ namespace InfSec_Lab
             InitializeComponent();
 
             string curFile = "users.json";
-            DataContractJsonSerializer formatter = new DataContractJsonSerializer(typeof(AllUsersJson));
             if (!File.Exists(curFile))
             {
                 Console.WriteLine("Cannot found users.json. Creating...");
                 UserJSON admin = new UserJSON("ADMIN");
                 AllUsersJson users = new AllUsersJson(admin);
-                using (FileStream fs = new FileStream(curFile, FileMode.OpenOrCreate))
+                string json = JsonConvert.SerializeObject(users);
+                using (StreamWriter writer = new StreamWriter(curFile, false))
                 {
-                    // сериализация (сохранение объекта в поток) 
-                    formatter.WriteObject(fs, users);
+                    writer.WriteLineAsync(json);
                 }
 
                 Users.Add(admin);
             } else
             {
                 Console.WriteLine("users.json founded");
-                using (FileStream fs = new FileStream(curFile, FileMode.OpenOrCreate))
+                using (StreamReader reader = new StreamReader(curFile))
                 {
-                    // десериализация (создание объекта из потока) 
-                    AllUsersJson allUsersJson = (AllUsersJson)formatter.ReadObject(fs);
-                    Users = allUsersJson.UserData;
+                    string json = reader.ReadToEnd();
+                    Console.WriteLine(json);
+                    AllUsersJson restoredAllUsers = JsonConvert.DeserializeObject<AllUsersJson>(json);
+                    Users = restoredAllUsers.UsersData;
                 }
             }
         }
 
         private void AuthButton_Click(object sender, EventArgs e)
         {
-            string curFile = "users.txt";
-            if (!File.Exists(curFile))
+            string login = loginTextBox.Text;
+            string pass = passwordTextBox.Text;
+
+            UserJSON entered = new UserJSON(login, pass);
+            if (Users.Exists( item => (item.Login == login) && (item.Password == pass)))
             {
-                UserJSON admin = new UserJSON("ADMIN");
-                AllUsersJson users = new AllUsersJson(admin);
-                string json = JsonSerializer.Serialize(users);
-                Console.WriteLine(json);
-                using (StreamWriter writer = new StreamWriter(curFile, false))
-                {
-                    writer.WriteLineAsync(json);
-                }
+                Console.WriteLine("Successful");
             } else
             {
-                Console.WriteLine("Exist");
+                Console.WriteLine("Error");
             }
+      
         }
     }
 }
