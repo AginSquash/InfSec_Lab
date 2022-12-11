@@ -26,6 +26,12 @@ namespace InfSec_Lab
             Login = login;
             Password = "";
         }
+
+        public UserJSON()
+        {
+            Login = "";
+            Password = "";
+        }
     }
 
 
@@ -39,10 +45,14 @@ namespace InfSec_Lab
             UsersData.Add(userJSON);
         }
 
-        [JsonConstructor]
         public AllUsersJson(List<UserJSON> usersJSON)
         {
             UsersData = usersJSON;
+        }
+
+        public AllUsersJson()
+        {
+            UsersData = new List<UserJSON>();
         }
     }
 }
