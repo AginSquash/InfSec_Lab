@@ -67,6 +67,7 @@ namespace InfSec_Lab
             } else
             {
                 Console.WriteLine("Error");
+                MessageBox.Show("Duplicate username and password", "login page");
             }
       
         }
