@@ -7,6 +7,7 @@ using System.Text.Json;
 
 namespace InfSec_Lab
 {
+    [Serializable]
     public class UserJSON
     {
         public string Login { get; set; }
@@ -25,6 +26,7 @@ namespace InfSec_Lab
         }
     }
 
+    [Serializable]
     public class AllUsersJson
     {
         public List<UserJSON> UserData { get; set; }

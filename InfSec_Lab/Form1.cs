@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using System.Text.Json;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Json;
 
 namespace InfSec_Lab
 {
@@ -21,27 +23,28 @@ namespace InfSec_Lab
         {
             InitializeComponent();
 
-            string curFile = "users.txt";
+            string curFile = "users.json";
+            DataContractJsonSerializer formatter = new DataContractJsonSerializer(typeof(AllUsersJson));
             if (!File.Exists(curFile))
             {
+                Console.WriteLine("Cannot found users.json. Creating...");
                 UserJSON admin = new UserJSON("ADMIN");
                 AllUsersJson users = new AllUsersJson(admin);
-                string json = JsonSerializer.Serialize(users);
-                Console.WriteLine("Cannot found users.json. Creating...");
-                using (StreamWriter writer = new StreamWriter(curFile, false))
+                using (FileStream fs = new FileStream(curFile, FileMode.OpenOrCreate))
                 {
-                    writer.WriteLineAsync(json);
+                    // сериализация (сохранение объекта в поток) 
+                    formatter.WriteObject(fs, users);
                 }
+
                 Users.Add(admin);
             } else
             {
                 Console.WriteLine("users.json founded");
-                using (StreamReader reader = new StreamReader(curFile))
+                using (FileStream fs = new FileStream(curFile, FileMode.OpenOrCreate))
                 {
-                    string json = reader.ReadToEnd();
-                    Console.WriteLine(json);
-                    AllUsersJson? restoredAllUsers = JsonSerializer.Deserialize<AllUsersJson>(json);
-                    Users = restoredAllUsers.UserData;
+                    // десериализация (создание объекта из потока) 
+                    AllUsersJson allUsersJson = (AllUsersJson)formatter.ReadObject(fs);
+                    Users = allUsersJson.UserData;
                 }
             }
         }
