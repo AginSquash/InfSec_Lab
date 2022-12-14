@@ -102,6 +102,12 @@
     <Compile Include="ChangePassForm.Designer.cs">
       <DependentUpon>ChangePassForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeUserPreference.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeUserPreference.Designer.cs">
+      <DependentUpon>ChangeUserPreference.cs</DependentUpon>
+    </Compile>
     <Compile Include="IODriver.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChangePassForm.resx">
       <DependentUpon>ChangePassForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeUserPreference.resx">
+      <DependentUpon>ChangeUserPreference.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

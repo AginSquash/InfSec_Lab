@@ -58,7 +58,7 @@ namespace InfSec_Lab
             this.openUserProfile.Name = "openUserProfile";
             this.openUserProfile.Size = new System.Drawing.Size(139, 74);
             this.openUserProfile.TabIndex = 2;
-            this.openUserProfile.Text = "button2";
+            this.openUserProfile.Text = "Изменить";
             this.openUserProfile.UseVisualStyleBackColor = true;
             this.openUserProfile.Click += new System.EventHandler(this.openUserProfile_Click);
             // 

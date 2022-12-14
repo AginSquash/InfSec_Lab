@@ -22,6 +22,7 @@ namespace InfSec_Lab
 
         public void updateUserList()
         {
+            Users = IODriver.ReadUsersData();
             foreach (var user in Users)
             {
                 usersListBox.Items.Add(user.Login);
@@ -30,7 +31,13 @@ namespace InfSec_Lab
 
         private void openUserProfile_Click(object sender, EventArgs e)
         {
-
+            //string name = usersListBox.SelectedItem.ToString();
+            int index = usersListBox.SelectedIndex;
+            UserJSON userJson = Users.ElementAt(index);
+            ChangeUserPreference changeUserPreference = new ChangeUserPreference(userJson);
+            changeUserPreference.ShowDialog();
+            Console.WriteLine("Updating");
+            updateUserList();
         }
     }
 }

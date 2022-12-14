@@ -13,7 +13,7 @@ namespace InfSec_Lab
         public string Login { get; set; }
         public string Password { get; set; }
         public bool passwordRestriction { get; set; }
-        public bool isLocked { get; set; }
+        public bool isBlocked { get; set; }
 
 
         [JsonConstructor]
@@ -22,7 +22,7 @@ namespace InfSec_Lab
             Login = login;
             Password = password;
             passwordRestriction = passRestriction;
-            isLocked = false;
+            isBlocked = false;
         }
 
         public UserJSON(string login, bool passRestriction)
@@ -30,7 +30,7 @@ namespace InfSec_Lab
             Login = login;
             Password = "";
             passwordRestriction = passRestriction;
-            isLocked = false;
+            isBlocked = false;
         }
 
         public UserJSON(string login)
@@ -38,7 +38,7 @@ namespace InfSec_Lab
             Login = login;
             Password = "";
             passwordRestriction = false;
-            isLocked = false;
+            isBlocked = false;
         }
 
         public UserJSON()
@@ -46,7 +46,7 @@ namespace InfSec_Lab
             Login = "";
             Password = "";
             passwordRestriction = false;
-            isLocked = false;
+            isBlocked = false;
         }
     }
 
