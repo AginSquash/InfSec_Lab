@@ -38,5 +38,11 @@ namespace InfSec_Lab
             addUser.Users = Users;
             addUser.ShowDialog();
         }
+
+        private void userListToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsersList usersList = new UsersList();
+            usersList.ShowDialog();
+        }
     }
 }
