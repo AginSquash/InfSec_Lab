@@ -31,11 +31,11 @@ namespace InfSec_Lab
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сменаПароляToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.новыйПарольToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.всеПользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,39 +60,40 @@ namespace InfSec_Lab
             this.всеПользователиToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(191, 40);
+            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(191, 44);
             this.пользователиToolStripMenuItem.Text = "Пользователи";
-            // 
-            // справкаToolStripMenuItem
-            // 
-            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(127, 40);
-            this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // сменаПароляToolStripMenuItem
             // 
             this.сменаПароляToolStripMenuItem.Name = "сменаПароляToolStripMenuItem";
-            this.сменаПароляToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.сменаПароляToolStripMenuItem.Size = new System.Drawing.Size(382, 44);
             this.сменаПароляToolStripMenuItem.Text = "Смена пароля";
             this.сменаПароляToolStripMenuItem.Click += new System.EventHandler(this.changePassToolStripMenuItem_Click);
             // 
             // новыйПарольToolStripMenuItem
             // 
             this.новыйПарольToolStripMenuItem.Name = "новыйПарольToolStripMenuItem";
-            this.новыйПарольToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
-            this.новыйПарольToolStripMenuItem.Text = "Новый пароль";
+            this.новыйПарольToolStripMenuItem.Size = new System.Drawing.Size(382, 44);
+            this.новыйПарольToolStripMenuItem.Text = "Новый пользователь";
+            this.новыйПарольToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // всеПользователиToolStripMenuItem
             // 
             this.всеПользователиToolStripMenuItem.Name = "всеПользователиToolStripMenuItem";
-            this.всеПользователиToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.всеПользователиToolStripMenuItem.Size = new System.Drawing.Size(382, 44);
             this.всеПользователиToolStripMenuItem.Text = "Все пользователи";
             // 
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(359, 44);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(382, 44);
             this.выходToolStripMenuItem.Text = "Выход";
+            // 
+            // справкаToolStripMenuItem
+            // 
+            this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(127, 44);
+            this.справкаToolStripMenuItem.Text = "Справка";
             // 
             // MainForm
             // 

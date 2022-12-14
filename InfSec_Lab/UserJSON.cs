@@ -12,24 +12,41 @@ namespace InfSec_Lab
     {
         public string Login { get; set; }
         public string Password { get; set; }
+        public bool passwordRestriction { get; set; }
+        public bool isLocked { get; set; }
+
 
         [JsonConstructor]
-        public UserJSON(string login, string password)
+        public UserJSON(string login, string password, bool passRestriction = false)
         {
             Login = login;
             Password = password;
+            passwordRestriction = passRestriction;
+            isLocked = false;
+        }
+
+        public UserJSON(string login, bool passRestriction)
+        {
+            Login = login;
+            Password = "";
+            passwordRestriction = passRestriction;
+            isLocked = false;
         }
 
         public UserJSON(string login)
         {
             Login = login;
             Password = "";
+            passwordRestriction = false;
+            isLocked = false;
         }
 
         public UserJSON()
         {
             Login = "";
             Password = "";
+            passwordRestriction = false;
+            isLocked = false;
         }
     }
 

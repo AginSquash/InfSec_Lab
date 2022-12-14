@@ -31,5 +31,12 @@ namespace InfSec_Lab
             cpf.Users = Users;
             cpf.ShowDialog();
         }
+
+        private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddUser addUser = new AddUser();
+            addUser.Users = Users;
+            addUser.ShowDialog();
+        }
     }
 }
