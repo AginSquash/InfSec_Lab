@@ -13,7 +13,7 @@ namespace InfSec_Lab
         static string curFile = "users.json";
         static public void WriteUsersData(List<UserJSON> users)
         {
-            string json = JsonConvert.SerializeObject(users);
+            string json = JsonConvert.SerializeObject(users, Formatting.Indented);
             using (StreamWriter writer = new StreamWriter(curFile, false))
             {
                 writer.WriteLineAsync(json);

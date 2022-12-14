@@ -24,14 +24,10 @@ namespace InfSec_Lab
             string curFile = "users.json";
             if (!File.Exists(curFile))
             {
-               
                 Console.WriteLine("Cannot found users.json. Creating...");
                 UserJSON admin = new UserJSON("ADMIN");
-                List<UserJSON> allUserJSON = new List<UserJSON>();
-                allUserJSON.Add(admin);
-                IODriver.WriteUsersData(Users);
-
                 Users.Add(admin);
+                IODriver.WriteUsersData(Users);
             } else
             {
                 Console.WriteLine("users.json founded");
