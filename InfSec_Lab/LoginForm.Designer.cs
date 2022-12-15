@@ -80,7 +80,7 @@ namespace InfSec_Lab
             this.AuthButton.Name = "AuthButton";
             this.AuthButton.Size = new System.Drawing.Size(200, 44);
             this.AuthButton.TabIndex = 4;
-            this.AuthButton.Text = "Auth";
+            this.AuthButton.Text = "Вход";
             this.AuthButton.UseVisualStyleBackColor = true;
             this.AuthButton.Click += new System.EventHandler(this.AuthButton_Click);
             // 
