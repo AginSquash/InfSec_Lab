@@ -31,5 +31,28 @@ namespace InfSec_Lab
             Users[index].isBlocked = isBlocked.Checked;
             IODriver.WriteUsersData(Users);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void passwordRestriction_CheckedChanged(object sender, EventArgs e)
+        {
+            fillPassRestBox(passwordRestriction.Checked);
+        }
+
+        private void fillPassRestBox(bool isCheked)
+        {
+            String text = "Ограничение на пароль:\n";
+            if (isCheked)
+            {
+                passRestBox.Text = text + "Наличие букв и знаков препинания.";
+            }
+            else
+            {
+                passRestBox.Text = text + "не заданны.";
+            }
+        }
     }
 }

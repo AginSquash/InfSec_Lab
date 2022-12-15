@@ -33,7 +33,7 @@ namespace InfSec_Lab
             this.username = new System.Windows.Forms.TextBox();
             this.passwordRestriction = new System.Windows.Forms.CheckBox();
             this.addUserButton = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.passRestBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -62,6 +62,7 @@ namespace InfSec_Lab
             this.passwordRestriction.TabIndex = 3;
             this.passwordRestriction.Text = "Парольное ограничение";
             this.passwordRestriction.UseVisualStyleBackColor = true;
+            this.passwordRestriction.CheckedChanged += new System.EventHandler(this.passwordRestriction_CheckedChanged);
             // 
             // addUserButton
             // 
@@ -73,20 +74,20 @@ namespace InfSec_Lab
             this.addUserButton.UseVisualStyleBackColor = true;
             this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
             // 
-            // richTextBox1
+            // passRestBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(566, 46);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(312, 150);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "Ограничение на пароль: \nне заданны";
+            this.passRestBox.Location = new System.Drawing.Point(566, 46);
+            this.passRestBox.Name = "passRestBox";
+            this.passRestBox.Size = new System.Drawing.Size(312, 150);
+            this.passRestBox.TabIndex = 9;
+            this.passRestBox.Text = "Ограничение на пароль: \nне заданны";
             // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(909, 274);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.passRestBox);
             this.Controls.Add(this.addUserButton);
             this.Controls.Add(this.passwordRestriction);
             this.Controls.Add(this.username);
@@ -104,6 +105,6 @@ namespace InfSec_Lab
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.CheckBox passwordRestriction;
         private System.Windows.Forms.Button addUserButton;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox passRestBox;
     }
 }

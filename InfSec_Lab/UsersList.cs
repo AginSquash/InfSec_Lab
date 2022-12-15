@@ -39,5 +39,10 @@ namespace InfSec_Lab
             Console.WriteLine("Updating");
             updateUserList();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

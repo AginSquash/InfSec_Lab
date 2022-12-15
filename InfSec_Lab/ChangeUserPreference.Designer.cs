@@ -29,7 +29,7 @@ namespace InfSec_Lab
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.passRestBox = new System.Windows.Forms.RichTextBox();
             this.SaveUserPrefButton = new System.Windows.Forms.Button();
             this.passwordRestriction = new System.Windows.Forms.CheckBox();
             this.username = new System.Windows.Forms.TextBox();
@@ -38,13 +38,13 @@ namespace InfSec_Lab
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // passRestBox
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(544, 33);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(312, 150);
-            this.richTextBox1.TabIndex = 14;
-            this.richTextBox1.Text = "Ограничение на пароль: \nне заданны";
+            this.passRestBox.Location = new System.Drawing.Point(544, 33);
+            this.passRestBox.Name = "passRestBox";
+            this.passRestBox.Size = new System.Drawing.Size(312, 150);
+            this.passRestBox.TabIndex = 14;
+            this.passRestBox.Text = "Ограничение на пароль: \nне заданны";
             // 
             // SaveUserPrefButton
             // 
@@ -66,6 +66,7 @@ namespace InfSec_Lab
             this.passwordRestriction.TabIndex = 12;
             this.passwordRestriction.Text = "Парольное ограничение";
             this.passwordRestriction.UseVisualStyleBackColor = true;
+            this.passwordRestriction.CheckedChanged += new System.EventHandler(this.passwordRestriction_CheckedChanged);
             // 
             // username
             // 
@@ -102,6 +103,7 @@ namespace InfSec_Lab
             this.button1.TabIndex = 16;
             this.button1.Text = "Отмена";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ChangeUserPreference
             // 
@@ -110,7 +112,7 @@ namespace InfSec_Lab
             this.ClientSize = new System.Drawing.Size(894, 353);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.isBlocked);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.passRestBox);
             this.Controls.Add(this.SaveUserPrefButton);
             this.Controls.Add(this.passwordRestriction);
             this.Controls.Add(this.username);
@@ -124,7 +126,7 @@ namespace InfSec_Lab
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox passRestBox;
         private System.Windows.Forms.Button SaveUserPrefButton;
         private System.Windows.Forms.CheckBox passwordRestriction;
         private System.Windows.Forms.TextBox username;
