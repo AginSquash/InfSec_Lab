@@ -42,30 +42,35 @@ namespace InfSec_Lab
             string pass = passwordTextBox.Text;
 
             UserJSON entered = new UserJSON(login, pass);
-            int index = Users.FindIndex(item => (item.Login == login) && (item.Password == pass));
+            int index = Users.FindIndex(item => (item.Login == login));
             if (index > -1)
             {
-                Console.WriteLine("Successful");
-                
-                UserJSON currentUser = Users[index];
+                if (Users[index].Password == pass) { 
+                    Console.WriteLine("Successful");
 
-                if (currentUser.isBlocked)
+                    UserJSON currentUser = Users[index];
+
+                    if (currentUser.isBlocked)
+                    {
+                        showError("Учетная запись заблокированна");
+                        return;
+                    }
+
+                    MainForm ms = new MainForm(Users, currentUser);
+                    ms.Users = this.Users;
+                    ms.currentUser = currentUser;
+                    this.Hide();
+                    ms.ShowDialog();
+                    this.Close();
+                } else
                 {
-                    showError("Учетная запись заблокированна");
-                    return;
+                    showError("Неправильный пароль");
                 }
-
-                MainForm ms = new MainForm(Users, currentUser); 
-                ms.Users = this.Users;
-                ms.currentUser = currentUser;
-                this.Hide();
-                ms.ShowDialog();
-                this.Close();
 
             } else
             {
                 Console.WriteLine("Error");
-                showError("Неправильный логин или пароль");
+                showError("Такого пользователя не существует");
             }
       
         }
