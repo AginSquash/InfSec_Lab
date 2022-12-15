@@ -16,6 +16,7 @@ namespace InfSec_Lab
     {
 
         List<UserJSON> Users = new List<UserJSON>();
+        int errorCount = 0;
 
         public LoginForm()
         {
@@ -72,6 +73,13 @@ namespace InfSec_Lab
         private void showError(String errorString)
         {
             MessageBox.Show(errorString, "login error");
+            if (errorCount == 3)
+            {
+                Application.Exit();
+            } else
+            {
+                errorCount++;
+            }
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
