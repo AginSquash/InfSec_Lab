@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 namespace InfSec_Lab
 {
 
-    public class UserJSON
+    public class UserJSON: IComparable
     {
         public string Login { get; set; }
         public string Password { get; set; }
@@ -47,6 +47,12 @@ namespace InfSec_Lab
             Password = "";
             passwordRestriction = false;
             isBlocked = false;
+        }
+
+        public int CompareTo(object obj)
+        {
+            if (obj is UserJSON user) return Login.CompareTo(user.Login);
+            else throw new ArgumentException("Некорректное значение параметра");
         }
     }
 
