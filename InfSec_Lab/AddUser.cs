@@ -12,7 +12,6 @@ namespace InfSec_Lab
 {
     public partial class AddUser : Form
     {
-        public List<UserJSON> Users = new List<UserJSON>();
         public AddUser()
         {
             InitializeComponent();
@@ -25,7 +24,14 @@ namespace InfSec_Lab
 
             UserJSON newUser = new UserJSON(login, restriction);
 
-            // Добавиь проверку есть ли пользователь с таким именем
+            List<UserJSON>  Users = IODriver.ReadUsersData();
+
+            if (Users.FindIndex(item => (item.Login == login)) > -1 )
+            {
+                MessageBox.Show("Пользователь с таким именем уже есть", "Успешно");
+                return;
+            }
+
             Users.Add(newUser);
 
             IODriver.WriteUsersData(Users);
