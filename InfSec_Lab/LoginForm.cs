@@ -41,13 +41,22 @@ namespace InfSec_Lab
             string pass = passwordTextBox.Text;
 
             UserJSON entered = new UserJSON(login, pass);
-            if (Users.Exists(item => (item.Login == login) && (item.Password == pass)))
+            int index = Users.FindIndex(item => (item.Login == login) && (item.Password == pass));
+            if (index > -1)
             {
                 Console.WriteLine("Successful");
+                
+                UserJSON currentUser = Users[index];
 
-                MainForm ms = new MainForm(); //this is the change, code for redirect  
+                if (currentUser.isBlocked)
+                {
+                    showError("Учетная запись заблокированна");
+                    return;
+                }
+
+                MainForm ms = new MainForm(); 
                 ms.Users = this.Users;
-                ms.currentUser = new UserJSON(login, pass);
+                ms.currentUser = currentUser;
                 this.Hide();
                 ms.ShowDialog();
                 this.Close();
@@ -55,9 +64,14 @@ namespace InfSec_Lab
             } else
             {
                 Console.WriteLine("Error");
-                MessageBox.Show("Duplicate username and password", "login page");
+                showError("Неправильный логин или пароль");
             }
       
+        }
+
+        private void showError(String errorString)
+        {
+            MessageBox.Show(errorString, "login error");
         }
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
