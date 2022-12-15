@@ -60,5 +60,10 @@ namespace InfSec_Lab
             lf.ShowDialog();
         }
 
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutForm af = new AboutForm();
+            af.ShowDialog();
+        }
     }
 }
