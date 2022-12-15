@@ -33,6 +33,7 @@ namespace InfSec_Lab
         private void openUserProfile_Click(object sender, EventArgs e)
         {
             int index = usersListBox.SelectedIndex;
+            if (index < 0) { return; }
             UserJSON userJson = Users.ElementAt(index);
             ChangeUserPreference changeUserPreference = new ChangeUserPreference(userJson);
             changeUserPreference.ShowDialog();
