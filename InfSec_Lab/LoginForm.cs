@@ -45,10 +45,22 @@ namespace InfSec_Lab
             int index = Users.FindIndex(item => (item.Login == login));
             if (index > -1)
             {
+                UserJSON currentUser = Users[index];
+
                 if (Users[index].Password == pass) { 
                     Console.WriteLine("Successful");
 
-                    UserJSON currentUser = Users[index];
+                    if (pass == "")
+                    {
+                        ChangePassForm cpf = new ChangePassForm(true);
+                        cpf.user = currentUser;
+                        cpf.Users = Users;
+                        cpf.ShowDialog();
+
+                        Users = IODriver.ReadUsersData();
+                        currentUser = Users.Find(item => (item.Login == login));
+                    }
+
 
                     if (currentUser.isBlocked)
                     {

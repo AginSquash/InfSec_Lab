@@ -14,9 +14,13 @@ namespace InfSec_Lab
     {
         public UserJSON user = new UserJSON();
         public List<UserJSON> Users = new List<UserJSON>();
-        public ChangePassForm()
+        public ChangePassForm(bool isFirstLogin = false)
         {
             InitializeComponent();
+            if (isFirstLogin)
+            {
+                oldPass.Enabled = false;
+            }
         }
 
         private void changePassword_Click(object sender, EventArgs e)
