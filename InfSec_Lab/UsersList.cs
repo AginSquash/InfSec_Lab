@@ -23,6 +23,7 @@ namespace InfSec_Lab
         public void updateUserList()
         {
             Users = IODriver.ReadUsersData();
+            usersListBox.Items.Clear();
             foreach (var user in Users)
             {
                 usersListBox.Items.Add(user.Login);
