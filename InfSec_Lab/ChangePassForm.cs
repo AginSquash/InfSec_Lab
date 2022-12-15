@@ -21,6 +21,7 @@ namespace InfSec_Lab
             {
                 oldPass.Enabled = false;
             }
+            Users = IODriver.ReadUsersData();
         }
 
         private void changePassword_Click(object sender, EventArgs e)

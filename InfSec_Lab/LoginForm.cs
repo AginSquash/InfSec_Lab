@@ -54,7 +54,6 @@ namespace InfSec_Lab
                     {
                         ChangePassForm cpf = new ChangePassForm(true);
                         cpf.user = currentUser;
-                        cpf.Users = Users;
                         cpf.ShowDialog();
 
                         Users = IODriver.ReadUsersData();
@@ -69,7 +68,6 @@ namespace InfSec_Lab
                     }
 
                     MainForm ms = new MainForm(Users, currentUser);
-                    ms.Users = this.Users;
                     ms.currentUser = currentUser;
                     this.Hide();
                     ms.ShowDialog();

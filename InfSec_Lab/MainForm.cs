@@ -12,13 +12,11 @@ namespace InfSec_Lab
 {
     public partial class MainForm : Form
     {
-        public List<UserJSON> Users = new List<UserJSON>();
         public UserJSON currentUser = new UserJSON();
 
         public MainForm(List<UserJSON> UsersAll, UserJSON CurrentUser)
         {
             InitializeComponent();
-            Users = UsersAll;
             currentUser = CurrentUser;
             if (currentUser.Login != "ADMIN")
             {
@@ -36,14 +34,12 @@ namespace InfSec_Lab
         {
             ChangePassForm cpf = new ChangePassForm(); //this is the change, code for redirect  
             cpf.user = currentUser;
-            cpf.Users = Users;
             cpf.ShowDialog();
         }
 
         private void addUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AddUser addUser = new AddUser();
-            addUser.Users = Users;
             addUser.ShowDialog();
         }
 
