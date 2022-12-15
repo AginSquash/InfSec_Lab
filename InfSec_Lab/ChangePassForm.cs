@@ -21,10 +21,17 @@ namespace InfSec_Lab
 
         private void changePassword_Click(object sender, EventArgs e)
         {
-             if (user.Password == oldPass.Text)
+            if (user.Password == oldPass.Text)
             {
                 if (newPass.Text == newPass2.Text)
                 {
+                    if ((user.passwordRestriction) && (PasswordCheck.isOK(newPass.Text) == false))
+                    {
+                        showError("Пароль не соответсвует ограничению");
+                        return;
+                        
+                    }
+
                     Users.RemoveAll(item => (item.Login == user.Login));
                     user.Password = newPass.Text;
                     Users.Add(user);
@@ -33,8 +40,24 @@ namespace InfSec_Lab
 
                     MessageBox.Show("Пароль успешно изменен", "Успешно");
                     this.Close();
+                } else
+                {
+                    showError("Введеные пароли не совпадают");
                 }
             }
+            else
+            {
+                showError("Старый пароль введен неправильно");
+            }
+        }
+
+        private void showError(String errorString)
+        {
+            MessageBox.Show(errorString, "login error");
+            oldPass.Text = "";
+            newPass.Text = "";
+            newPass2.Text = "";
         }
     }
+
 }
