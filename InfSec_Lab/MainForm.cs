@@ -15,9 +15,16 @@ namespace InfSec_Lab
         public List<UserJSON> Users = new List<UserJSON>();
         public UserJSON currentUser = new UserJSON();
 
-        public MainForm()
+        public MainForm(List<UserJSON> UsersAll, UserJSON CurrentUser)
         {
             InitializeComponent();
+            Users = UsersAll;
+            currentUser = CurrentUser;
+            if (currentUser.Login != "ADMIN")
+            {
+                UsersToolStripMenuItem.DropDownItems[1].Enabled = false;
+                UsersToolStripMenuItem.DropDownItems[2].Enabled = false;
+            }
         }
 
         private void MainForm_Closing(object sender, FormClosingEventArgs e)

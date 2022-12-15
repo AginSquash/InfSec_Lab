@@ -30,7 +30,7 @@ namespace InfSec_Lab
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.пользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сменаПароляToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.новыйПарольToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.всеПользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,7 +44,7 @@ namespace InfSec_Lab
             this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.пользователиToolStripMenuItem,
+            this.UsersToolStripMenuItem,
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -52,16 +52,16 @@ namespace InfSec_Lab
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // пользователиToolStripMenuItem
+            // UsersToolStripMenuItem
             // 
-            this.пользователиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.UsersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.сменаПароляToolStripMenuItem,
             this.новыйПарольToolStripMenuItem,
             this.всеПользователиToolStripMenuItem,
             this.выходToolStripMenuItem});
-            this.пользователиToolStripMenuItem.Name = "пользователиToolStripMenuItem";
-            this.пользователиToolStripMenuItem.Size = new System.Drawing.Size(191, 38);
-            this.пользователиToolStripMenuItem.Text = "Пользователи";
+            this.UsersToolStripMenuItem.Name = "UsersToolStripMenuItem";
+            this.UsersToolStripMenuItem.Size = new System.Drawing.Size(191, 38);
+            this.UsersToolStripMenuItem.Text = "Пользователи";
             // 
             // сменаПароляToolStripMenuItem
             // 
@@ -116,7 +116,7 @@ namespace InfSec_Lab
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem пользователиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem UsersToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сменаПароляToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem новыйПарольToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem всеПользователиToolStripMenuItem;

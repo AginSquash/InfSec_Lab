@@ -55,7 +55,7 @@ namespace InfSec_Lab
                     return;
                 }
 
-                MainForm ms = new MainForm(); 
+                MainForm ms = new MainForm(Users, currentUser); 
                 ms.Users = this.Users;
                 ms.currentUser = currentUser;
                 this.Hide();
