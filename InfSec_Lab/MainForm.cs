@@ -14,6 +14,7 @@ namespace InfSec_Lab
     {
         public List<UserJSON> Users = new List<UserJSON>();
         public UserJSON currentUser = new UserJSON();
+
         public MainForm()
         {
             InitializeComponent();
@@ -44,5 +45,13 @@ namespace InfSec_Lab
             UsersList usersList = new UsersList();
             usersList.ShowDialog();
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginForm lf = new LoginForm();
+            this.Hide();
+            lf.ShowDialog();
+        }
+
     }
 }

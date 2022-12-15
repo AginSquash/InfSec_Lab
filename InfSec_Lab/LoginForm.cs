@@ -41,7 +41,7 @@ namespace InfSec_Lab
             string pass = passwordTextBox.Text;
 
             UserJSON entered = new UserJSON(login, pass);
-            if (Users.Exists( item => (item.Login == login) && (item.Password == pass)))
+            if (Users.Exists(item => (item.Login == login) && (item.Password == pass)))
             {
                 Console.WriteLine("Successful");
 

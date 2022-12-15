@@ -31,7 +31,6 @@ namespace InfSec_Lab
 
         private void openUserProfile_Click(object sender, EventArgs e)
         {
-            //string name = usersListBox.SelectedItem.ToString();
             int index = usersListBox.SelectedIndex;
             UserJSON userJson = Users.ElementAt(index);
             ChangeUserPreference changeUserPreference = new ChangeUserPreference(userJson);
