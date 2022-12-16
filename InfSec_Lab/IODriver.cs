@@ -14,12 +14,12 @@ namespace InfSec_Lab
     class IODriver
     {
         static string curFile = "users.json";
-        static public void WriteUsersData(List<UserJSON> users, String pass = "")
+        static public void WriteUsersData(List<UserJSON> users, String pass)
         {
             users.Sort();
             string json = JsonConvert.SerializeObject(users, Formatting.Indented);
             byte[] plaintext = Encoding.ASCII.GetBytes(json);
-            byte[] key = Encoding.ASCII.GetBytes(pass);
+            byte[] key = Encoding.ASCII.GetBytes(PassEnterForm.pass);
             byte[] ciphertext = Spritz.Encrypt(plaintext, key);
             try
             {
@@ -36,12 +36,12 @@ namespace InfSec_Lab
             }
         }
 
-        static public List<UserJSON> ReadUsersData(String pass = "")
+        static public List<UserJSON> ReadUsersData(String pass)
         {
             using (StreamReader reader = new StreamReader(curFile))
             {
                 byte[] json = File.ReadAllBytes(curFile); 
-                byte[] key = Encoding.ASCII.GetBytes(pass);
+                byte[] key = Encoding.ASCII.GetBytes(PassEnterForm.pass);
                 byte[] cleartext = Spritz.Decrypt(json, key);
                 String decoded = Encoding.ASCII.GetString(cleartext); 
                 Console.WriteLine(decoded);
