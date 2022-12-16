@@ -14,12 +14,12 @@ namespace InfSec_Lab
     class IODriver
     {
         static string curFile = "users.json";
-        static public void WriteUsersData(List<UserJSON> users)
+        static public void WriteUsersData(List<UserJSON> users, String pass = "")
         {
             users.Sort();
             string json = JsonConvert.SerializeObject(users, Formatting.Indented);
             byte[] plaintext = Encoding.ASCII.GetBytes(json);
-            byte[] key = Encoding.ASCII.GetBytes("secret key");
+            byte[] key = Encoding.ASCII.GetBytes(pass);
             byte[] ciphertext = Spritz.Encrypt(plaintext, key);
             try
             {
@@ -36,17 +36,24 @@ namespace InfSec_Lab
             }
         }
 
-        static public List<UserJSON> ReadUsersData()
+        static public List<UserJSON> ReadUsersData(String pass = "")
         {
             using (StreamReader reader = new StreamReader(curFile))
             {
                 byte[] json = File.ReadAllBytes(curFile); 
-                byte[] key = Encoding.ASCII.GetBytes("secret key");
+                byte[] key = Encoding.ASCII.GetBytes(pass);
                 byte[] cleartext = Spritz.Decrypt(json, key);
                 String decoded = Encoding.ASCII.GetString(cleartext); 
                 Console.WriteLine(decoded);
-                List<UserJSON> Users = JsonConvert.DeserializeObject<List<UserJSON>>(decoded);
-                return Users;
+                try
+                {
+                    List<UserJSON> Users = JsonConvert.DeserializeObject<List<UserJSON>>(decoded);
+                    return Users;
+                } catch
+                {
+                    List<UserJSON> Users = new List<UserJSON>();
+                    return Users;
+                }
             }
         }
 

@@ -16,8 +16,10 @@ namespace InfSec_Lab
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            LoginForm loginFrm = new LoginForm();
-            loginFrm.Show();
+            //LoginForm loginFrm = new LoginForm();
+            //loginFrm.Show();
+            PassEnterForm pef = new PassEnterForm();
+            pef.Show();
             Application.Run();
         }
     }

@@ -121,6 +121,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PassEnterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassEnterForm.Designer.cs">
+      <DependentUpon>PassEnterForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="PasswordCheck.cs" />
     <Compile Include="Spritz.cs" />
     <Compile Include="SpritzCipher.cs" />
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassEnterForm.resx">
+      <DependentUpon>PassEnterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
