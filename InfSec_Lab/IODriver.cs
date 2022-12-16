@@ -21,10 +21,18 @@ namespace InfSec_Lab
             byte[] plaintext = Encoding.ASCII.GetBytes(json);
             byte[] key = Encoding.ASCII.GetBytes("secret key");
             byte[] ciphertext = Spritz.Encrypt(plaintext, key);
-            String encoded = Bin2Hex(ciphertext);
-            using (StreamWriter writer = new StreamWriter(curFile, false))
+            try
             {
-                writer.WriteLineAsync(encoded);
+                using (var fs = new FileStream(curFile, FileMode.Create, FileAccess.Write))
+                {
+                    fs.Write(ciphertext, 0, ciphertext.Length);
+                    return;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Exception caught in process: {0}", ex);
+                return;
             }
         }
 
@@ -32,17 +40,22 @@ namespace InfSec_Lab
         {
             using (StreamReader reader = new StreamReader(curFile))
             {
-                string json = reader.ReadToEnd();
+                byte[] json = File.ReadAllBytes(curFile); //reader.ReadToEnd();
                 Console.WriteLine(json);
 
-                byte[] encoded = Hex2Bin(json);
+                //byte[] encoded = Hex2Bin(json);
                 byte[] key = Encoding.ASCII.GetBytes("secret key");
-                byte[] cleartext = Spritz.Decrypt(encoded, key);
+                byte[] cleartext = Spritz.Decrypt(json, key);
                 String decoded = Encoding.ASCII.GetString(cleartext); 
                 Console.WriteLine(decoded);
                 List<UserJSON> Users = JsonConvert.DeserializeObject<List<UserJSON>>(decoded);
                 return Users;
             }
+        }
+
+        private static string ReadAllBytes()
+        {
+            throw new NotImplementedException();
         }
 
         static byte[] EncryptStringToBytes(string plainText, byte[] Key, byte[] IV)
@@ -128,39 +141,5 @@ namespace InfSec_Lab
             return plaintext;
         }
 
-        private static byte[] Hex2Bin(string hex)
-        {
-            if ((hex == null) || (hex.Length < 1))
-            {
-                return new byte[0];
-            }
-            int num = hex.Length / 2;
-            byte[] buffer = new byte[num];
-            num *= 2;
-            for (int i = 0; i < num; i++)
-            {
-                int num3 = int.Parse(hex.Substring(i, 2), NumberStyles.HexNumber);
-                buffer[i / 2] = (byte)num3;
-                i++;
-            }
-            return buffer;
-        }
-
-        private static string Bin2Hex(byte[] binary)
-        {
-            StringBuilder builder = new StringBuilder();
-            foreach (byte num in binary)
-            {
-                if (num > 15)
-                {
-                    builder.AppendFormat("{0:X}", num);
-                }
-                else
-                {
-                    builder.AppendFormat("0{0:X}", num); 
-                }
-            }
-            return builder.ToString();
-        }
     }
 }
