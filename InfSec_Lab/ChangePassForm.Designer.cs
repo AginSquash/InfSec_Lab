@@ -36,7 +36,7 @@ namespace InfSec_Lab
             this.oldPass = new System.Windows.Forms.TextBox();
             this.newPass = new System.Windows.Forms.TextBox();
             this.newPass2 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.passRestBox2 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -100,20 +100,20 @@ namespace InfSec_Lab
             this.newPass2.Size = new System.Drawing.Size(292, 31);
             this.newPass2.TabIndex = 6;
             // 
-            // richTextBox1
+            // passRestBox2
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(618, 38);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(312, 150);
-            this.richTextBox1.TabIndex = 8;
-            this.richTextBox1.Text = "Ограничение на пароль: \nне заданны";
+            this.passRestBox2.Location = new System.Drawing.Point(618, 38);
+            this.passRestBox2.Name = "passRestBox2";
+            this.passRestBox2.Size = new System.Drawing.Size(312, 150);
+            this.passRestBox2.TabIndex = 8;
+            this.passRestBox2.Text = "Ограничение на пароль: \nне заданны";
             // 
             // ChangePassForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 304);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(946, 304);
+            this.Controls.Add(this.passRestBox2);
             this.Controls.Add(this.newPass2);
             this.Controls.Add(this.newPass);
             this.Controls.Add(this.oldPass);
@@ -137,6 +137,6 @@ namespace InfSec_Lab
         private System.Windows.Forms.TextBox oldPass;
         private System.Windows.Forms.TextBox newPass;
         private System.Windows.Forms.TextBox newPass2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox passRestBox2;
     }
 }

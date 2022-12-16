@@ -32,8 +32,7 @@ namespace InfSec_Lab
 
         private void changePassToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangePassForm cpf = new ChangePassForm(); //this is the change, code for redirect  
-            cpf.user = currentUser;
+            ChangePassForm cpf = new ChangePassForm(currentUser); //this is the change, code for redirect  
             cpf.ShowDialog();
         }
 

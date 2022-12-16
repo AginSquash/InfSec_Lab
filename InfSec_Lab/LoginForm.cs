@@ -52,8 +52,7 @@ namespace InfSec_Lab
 
                     if (pass == "")
                     {
-                        ChangePassForm cpf = new ChangePassForm(true);
-                        cpf.user = currentUser;
+                        ChangePassForm cpf = new ChangePassForm(currentUser, true);
                         cpf.ShowDialog();
 
                         Users = IODriver.ReadUsersData();

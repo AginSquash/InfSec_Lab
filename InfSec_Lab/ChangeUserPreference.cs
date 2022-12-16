@@ -30,6 +30,9 @@ namespace InfSec_Lab
             Users[index].passwordRestriction = passwordRestriction.Checked;
             Users[index].isBlocked = isBlocked.Checked;
             IODriver.WriteUsersData(Users);
+
+            MessageBox.Show("Настройки сохранены", "Ok");
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

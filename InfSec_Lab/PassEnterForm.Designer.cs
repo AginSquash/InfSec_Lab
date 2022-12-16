@@ -70,6 +70,7 @@ namespace InfSec_Lab
             this.Controls.Add(this.label1);
             this.Name = "PassEnterForm";
             this.Text = "PassEnterForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PassEnterForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

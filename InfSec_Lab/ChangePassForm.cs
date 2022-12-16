@@ -14,14 +14,23 @@ namespace InfSec_Lab
     {
         public UserJSON user = new UserJSON();
         public List<UserJSON> Users = new List<UserJSON>();
-        public ChangePassForm(bool isFirstLogin = false)
+        public ChangePassForm(UserJSON user, bool isFirstLogin = false)
         {
             InitializeComponent();
             if (isFirstLogin)
             {
                 oldPass.Enabled = false;
             }
+            this.user = user;
             Users = IODriver.ReadUsersData();
+            String text = "Ограничение на пароль:\n";
+            if (user.passwordRestriction)
+            {
+                passRestBox2.Text = text + "Наличие букв и знаков препинания.";
+            } else
+            {
+                passRestBox2.Text = text + "не заданны.";
+            }
         }
 
         private void changePassword_Click(object sender, EventArgs e)

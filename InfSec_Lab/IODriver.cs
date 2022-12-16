@@ -14,7 +14,7 @@ namespace InfSec_Lab
     class IODriver
     {
         static string curFile = "users.json";
-        static public void WriteUsersData(List<UserJSON> users, String pass)
+        static public void WriteUsersData(List<UserJSON> users)
         {
             users.Sort();
             string json = JsonConvert.SerializeObject(users, Formatting.Indented);
@@ -36,7 +36,7 @@ namespace InfSec_Lab
             }
         }
 
-        static public List<UserJSON> ReadUsersData(String pass)
+        static public List<UserJSON> ReadUsersData()
         {
             using (StreamReader reader = new StreamReader(curFile))
             {

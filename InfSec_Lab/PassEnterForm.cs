@@ -33,7 +33,9 @@ namespace InfSec_Lab
                 Users.Add(admin);
                 IODriver.WriteUsersData(Users);
 
-               //LoginForm lf = new LoginForm();
+                LoginForm lf = new LoginForm();
+                this.Hide();
+                lf.ShowDialog();
                 
             }
             else
@@ -42,10 +44,20 @@ namespace InfSec_Lab
                 List<UserJSON> Users = IODriver.ReadUsersData();
                 if (Users.Count > 0) 
                 {
-
+                    LoginForm lf = new LoginForm();
+                    this.Hide();
+                    lf.ShowDialog();
+                } else
+                {
+                    MessageBox.Show("Неверный пароль", "login error");
                 }
-                //Users = IODriver.ReadUsersData();
+                
             }
+        }
+
+        private void PassEnterForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
