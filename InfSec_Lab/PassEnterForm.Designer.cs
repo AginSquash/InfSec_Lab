@@ -37,24 +37,28 @@ namespace InfSec_Lab
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(135, 82);
+            this.label1.Location = new System.Drawing.Point(68, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(280, 25);
+            this.label1.Size = new System.Drawing.Size(141, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Введите парольную фразу";
             // 
             // passTextBox
             // 
-            this.passTextBox.Location = new System.Drawing.Point(140, 139);
+            this.passTextBox.Location = new System.Drawing.Point(70, 72);
+            this.passTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.passTextBox.Name = "passTextBox";
-            this.passTextBox.Size = new System.Drawing.Size(275, 31);
+            this.passTextBox.PasswordChar = '*';
+            this.passTextBox.Size = new System.Drawing.Size(140, 20);
             this.passTextBox.TabIndex = 1;
             // 
             // Расшифровать
             // 
-            this.Расшифровать.Location = new System.Drawing.Point(140, 204);
+            this.Расшифровать.Location = new System.Drawing.Point(70, 106);
+            this.Расшифровать.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Расшифровать.Name = "Расшифровать";
-            this.Расшифровать.Size = new System.Drawing.Size(275, 83);
+            this.Расшифровать.Size = new System.Drawing.Size(138, 43);
             this.Расшифровать.TabIndex = 2;
             this.Расшифровать.Text = "Расшифровать";
             this.Расшифровать.UseVisualStyleBackColor = true;
@@ -62,12 +66,13 @@ namespace InfSec_Lab
             // 
             // PassEnterForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(573, 378);
+            this.ClientSize = new System.Drawing.Size(286, 197);
             this.Controls.Add(this.Расшифровать);
             this.Controls.Add(this.passTextBox);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PassEnterForm";
             this.Text = "PassEnterForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PassEnterForm_FormClosing);
