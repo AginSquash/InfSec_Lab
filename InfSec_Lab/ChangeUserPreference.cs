@@ -40,22 +40,5 @@ namespace InfSec_Lab
             this.Close();
         }
 
-        private void passwordRestriction_CheckedChanged(object sender, EventArgs e)
-        {
-            fillPassRestBox(passwordRestriction.Checked);
-        }
-
-        private void fillPassRestBox(bool isCheked)
-        {
-            String text = "Ограничение на пароль:\n";
-            if (isCheked)
-            {
-                passRestBox.Text = text + "Наличие букв и знаков препинания.";
-            }
-            else
-            {
-                passRestBox.Text = text + "не заданны.";
-            }
-        }
     }
 }

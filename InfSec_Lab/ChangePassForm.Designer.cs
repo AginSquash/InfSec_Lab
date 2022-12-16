@@ -36,13 +36,12 @@ namespace InfSec_Lab
             this.oldPass = new System.Windows.Forms.TextBox();
             this.newPass = new System.Windows.Forms.TextBox();
             this.newPass2 = new System.Windows.Forms.TextBox();
-            this.passRestBox2 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 44);
+            this.label1.Location = new System.Drawing.Point(54, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(250, 25);
             this.label1.TabIndex = 0;
@@ -51,7 +50,7 @@ namespace InfSec_Lab
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 106);
+            this.label2.Location = new System.Drawing.Point(54, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(240, 25);
             this.label2.TabIndex = 1;
@@ -60,7 +59,7 @@ namespace InfSec_Lab
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 163);
+            this.label3.Location = new System.Drawing.Point(41, 182);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(263, 25);
             this.label3.TabIndex = 2;
@@ -68,7 +67,7 @@ namespace InfSec_Lab
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(347, 222);
+            this.button1.Location = new System.Drawing.Point(80, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(188, 64);
             this.button1.TabIndex = 3;
@@ -78,7 +77,7 @@ namespace InfSec_Lab
             // 
             // oldPass
             // 
-            this.oldPass.Location = new System.Drawing.Point(294, 38);
+            this.oldPass.Location = new System.Drawing.Point(30, 64);
             this.oldPass.Name = "oldPass";
             this.oldPass.PasswordChar = '*';
             this.oldPass.Size = new System.Drawing.Size(292, 31);
@@ -86,7 +85,7 @@ namespace InfSec_Lab
             // 
             // newPass
             // 
-            this.newPass.Location = new System.Drawing.Point(294, 100);
+            this.newPass.Location = new System.Drawing.Point(30, 133);
             this.newPass.Name = "newPass";
             this.newPass.PasswordChar = '*';
             this.newPass.Size = new System.Drawing.Size(292, 31);
@@ -94,26 +93,17 @@ namespace InfSec_Lab
             // 
             // newPass2
             // 
-            this.newPass2.Location = new System.Drawing.Point(294, 157);
+            this.newPass2.Location = new System.Drawing.Point(30, 210);
             this.newPass2.Name = "newPass2";
             this.newPass2.PasswordChar = '*';
             this.newPass2.Size = new System.Drawing.Size(292, 31);
             this.newPass2.TabIndex = 6;
             // 
-            // passRestBox2
-            // 
-            this.passRestBox2.Location = new System.Drawing.Point(618, 38);
-            this.passRestBox2.Name = "passRestBox2";
-            this.passRestBox2.Size = new System.Drawing.Size(312, 150);
-            this.passRestBox2.TabIndex = 8;
-            this.passRestBox2.Text = "Ограничение на пароль: \nне заданны";
-            // 
             // ChangePassForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(946, 304);
-            this.Controls.Add(this.passRestBox2);
+            this.ClientSize = new System.Drawing.Size(353, 349);
             this.Controls.Add(this.newPass2);
             this.Controls.Add(this.newPass);
             this.Controls.Add(this.oldPass);
@@ -137,6 +127,5 @@ namespace InfSec_Lab
         private System.Windows.Forms.TextBox oldPass;
         private System.Windows.Forms.TextBox newPass;
         private System.Windows.Forms.TextBox newPass2;
-        private System.Windows.Forms.RichTextBox passRestBox2;
     }
 }

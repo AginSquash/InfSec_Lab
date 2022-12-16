@@ -23,14 +23,6 @@ namespace InfSec_Lab
             }
             this.user = user;
             Users = IODriver.ReadUsersData();
-            String text = "Ограничение на пароль:\n";
-            if (user.passwordRestriction)
-            {
-                passRestBox2.Text = text + "Наличие букв и знаков препинания.";
-            } else
-            {
-                passRestBox2.Text = text + "не заданны.";
-            }
         }
 
         private void changePassword_Click(object sender, EventArgs e)

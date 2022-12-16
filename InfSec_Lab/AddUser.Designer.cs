@@ -33,13 +33,12 @@ namespace InfSec_Lab
             this.username = new System.Windows.Forms.TextBox();
             this.passwordRestriction = new System.Windows.Forms.CheckBox();
             this.addUserButton = new System.Windows.Forms.Button();
-            this.passRestBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 52);
+            this.label1.Location = new System.Drawing.Point(71, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 25);
             this.label1.TabIndex = 0;
@@ -47,9 +46,9 @@ namespace InfSec_Lab
             // 
             // username
             // 
-            this.username.Location = new System.Drawing.Point(301, 46);
+            this.username.Location = new System.Drawing.Point(41, 58);
             this.username.Name = "username";
-            this.username.Size = new System.Drawing.Size(230, 31);
+            this.username.Size = new System.Drawing.Size(287, 31);
             this.username.TabIndex = 2;
             // 
             // passwordRestriction
@@ -62,11 +61,10 @@ namespace InfSec_Lab
             this.passwordRestriction.TabIndex = 3;
             this.passwordRestriction.Text = "Парольное ограничение";
             this.passwordRestriction.UseVisualStyleBackColor = true;
-            this.passwordRestriction.CheckedChanged += new System.EventHandler(this.passwordRestriction_CheckedChanged);
             // 
             // addUserButton
             // 
-            this.addUserButton.Location = new System.Drawing.Point(335, 172);
+            this.addUserButton.Location = new System.Drawing.Point(76, 167);
             this.addUserButton.Name = "addUserButton";
             this.addUserButton.Size = new System.Drawing.Size(171, 71);
             this.addUserButton.TabIndex = 4;
@@ -74,20 +72,11 @@ namespace InfSec_Lab
             this.addUserButton.UseVisualStyleBackColor = true;
             this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
             // 
-            // passRestBox
-            // 
-            this.passRestBox.Location = new System.Drawing.Point(566, 46);
-            this.passRestBox.Name = "passRestBox";
-            this.passRestBox.Size = new System.Drawing.Size(312, 150);
-            this.passRestBox.TabIndex = 9;
-            this.passRestBox.Text = "Ограничение на пароль: \nне заданны";
-            // 
             // AddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(909, 274);
-            this.Controls.Add(this.passRestBox);
+            this.ClientSize = new System.Drawing.Size(381, 259);
             this.Controls.Add(this.addUserButton);
             this.Controls.Add(this.passwordRestriction);
             this.Controls.Add(this.username);
@@ -105,6 +94,5 @@ namespace InfSec_Lab
         private System.Windows.Forms.TextBox username;
         private System.Windows.Forms.CheckBox passwordRestriction;
         private System.Windows.Forms.Button addUserButton;
-        private System.Windows.Forms.RichTextBox passRestBox;
     }
 }

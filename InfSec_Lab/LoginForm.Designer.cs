@@ -38,7 +38,7 @@ namespace InfSec_Lab
             // 
             // loginTextBox
             // 
-            this.loginTextBox.Location = new System.Drawing.Point(148, 75);
+            this.loginTextBox.Location = new System.Drawing.Point(148, 81);
             this.loginTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.loginTextBox.Name = "loginTextBox";
             this.loginTextBox.Size = new System.Drawing.Size(196, 31);
@@ -46,7 +46,7 @@ namespace InfSec_Lab
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(148, 158);
+            this.passwordTextBox.Location = new System.Drawing.Point(148, 175);
             this.passwordTextBox.Margin = new System.Windows.Forms.Padding(6);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.PasswordChar = '*';
@@ -56,7 +56,7 @@ namespace InfSec_Lab
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 81);
+            this.label1.Location = new System.Drawing.Point(200, 50);
             this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 25);
@@ -66,7 +66,7 @@ namespace InfSec_Lab
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 163);
+            this.label2.Location = new System.Drawing.Point(200, 144);
             this.label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 25);
