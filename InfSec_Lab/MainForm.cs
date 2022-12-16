@@ -14,14 +14,47 @@ namespace InfSec_Lab
     {
         public UserJSON currentUser = new UserJSON();
 
-        public MainForm(List<UserJSON> UsersAll, UserJSON CurrentUser)
+        public MainForm()
         {
             InitializeComponent();
-            currentUser = CurrentUser;
             if (currentUser.Login != "ADMIN")
             {
                 UsersToolStripMenuItem.DropDownItems[1].Enabled = false;
                 UsersToolStripMenuItem.DropDownItems[2].Enabled = false;
+            }
+
+            if (currentUser.Login == "")
+            {
+                UsersToolStripMenuItem.DropDownItems[0].Enabled = false;
+                UsersToolStripMenuItem.DropDownItems[1].Enabled = false;
+                UsersToolStripMenuItem.DropDownItems[2].Enabled = false;
+                UsersToolStripMenuItem.DropDownItems[3].Enabled = false;
+            }
+        }
+
+        public void updateUserToolStrip()
+        {
+            if (currentUser.Login == "ADMIN")
+            {
+                UsersToolStripMenuItem.DropDownItems[0].Enabled = true;
+                UsersToolStripMenuItem.DropDownItems[1].Enabled = true;
+                UsersToolStripMenuItem.DropDownItems[2].Enabled = true;
+                UsersToolStripMenuItem.DropDownItems[3].Enabled = true;
+
+                return;
+            }
+
+            UsersToolStripMenuItem.DropDownItems[1].Enabled = false;
+            UsersToolStripMenuItem.DropDownItems[2].Enabled = false;
+
+            if (currentUser.Login == "")
+            {
+                UsersToolStripMenuItem.DropDownItems[0].Enabled = false;
+                UsersToolStripMenuItem.DropDownItems[3].Enabled = false;
+            } else
+            {
+                UsersToolStripMenuItem.DropDownItems[0].Enabled = true;
+                UsersToolStripMenuItem.DropDownItems[3].Enabled = true;
             }
         }
 
@@ -50,15 +83,31 @@ namespace InfSec_Lab
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoginForm lf = new LoginForm();
-            this.Hide();
-            lf.ShowDialog();
+            currentUser = new UserJSON();
+            logonButton.Show();
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AboutForm af = new AboutForm();
+            if (currentUser.Login != "ADMIN")
+            {
+                UsersToolStripMenuItem.DropDownItems[1].Enabled = false;
+                UsersToolStripMenuItem.DropDownItems[2].Enabled = false;
+            }
             af.ShowDialog();
+        }
+
+        private void logonButton_Click(object sender, EventArgs e)
+        {
+            LoginForm lf = new LoginForm();
+            lf.Owner = this;
+            lf.ShowDialog();
+
+            if (currentUser.Login != "")
+            {
+                logonButton.Hide();
+            }
         }
     }
 }

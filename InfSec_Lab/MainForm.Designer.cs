@@ -36,6 +36,7 @@ namespace InfSec_Lab
             this.всеПользователиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logonButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@ namespace InfSec_Lab
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1112, 42);
+            this.menuStrip1.Size = new System.Drawing.Size(1112, 48);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -60,7 +61,7 @@ namespace InfSec_Lab
             this.всеПользователиToolStripMenuItem,
             this.выходToolStripMenuItem});
             this.UsersToolStripMenuItem.Name = "UsersToolStripMenuItem";
-            this.UsersToolStripMenuItem.Size = new System.Drawing.Size(191, 38);
+            this.UsersToolStripMenuItem.Size = new System.Drawing.Size(191, 44);
             this.UsersToolStripMenuItem.Text = "Пользователи";
             // 
             // сменаПароляToolStripMenuItem
@@ -94,15 +95,26 @@ namespace InfSec_Lab
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.Name = "справкаToolStripMenuItem";
-            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(127, 38);
+            this.справкаToolStripMenuItem.Size = new System.Drawing.Size(127, 44);
             this.справкаToolStripMenuItem.Text = "Справка";
             this.справкаToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // logonButton
+            // 
+            this.logonButton.Location = new System.Drawing.Point(472, 278);
+            this.logonButton.Name = "logonButton";
+            this.logonButton.Size = new System.Drawing.Size(163, 70);
+            this.logonButton.TabIndex = 1;
+            this.logonButton.Text = "Вход";
+            this.logonButton.UseVisualStyleBackColor = true;
+            this.logonButton.Click += new System.EventHandler(this.logonButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 592);
+            this.Controls.Add(this.logonButton);
             this.Controls.Add(this.menuStrip1);
             this.Name = "MainForm";
             this.Text = "MainSreen";
@@ -123,5 +135,6 @@ namespace InfSec_Lab
         private System.Windows.Forms.ToolStripMenuItem всеПользователиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem выходToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
+        private System.Windows.Forms.Button logonButton;
     }
 }

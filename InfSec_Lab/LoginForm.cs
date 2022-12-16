@@ -66,11 +66,15 @@ namespace InfSec_Lab
                         return;
                     }
 
-                    MainForm ms = new MainForm(Users, currentUser);
-                    ms.currentUser = currentUser;
-                    this.Hide();
-                    ms.ShowDialog();
-                    this.Close();
+                    MainForm main = this.Owner as MainForm;
+                    if (main != null)
+                    {
+                        this.Hide();
+                        main.currentUser = currentUser;
+                        main.updateUserToolStrip();
+                        main.Show();
+                    }
+                 
                 } else
                 {
                     showError("Неправильный пароль");
@@ -98,7 +102,6 @@ namespace InfSec_Lab
 
         private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
         }
     }
 }
