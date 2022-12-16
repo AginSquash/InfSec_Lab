@@ -122,6 +122,8 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PasswordCheck.cs" />
+    <Compile Include="Spritz.cs" />
+    <Compile Include="SpritzCipher.cs" />
     <Compile Include="UserJSON.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
